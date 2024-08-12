@@ -22,9 +22,9 @@ public class UserCreateService {
 
         if (existingUser.isPresent()) {
             if (Objects.equals(existingUser.get().getUsername(), signUpRequest.getUsername()))
-                throw new UserAlreadyExitsException(UserErrorCatalog.USERNAME_ALREADY_EXISTS);
+                throw new UserAlreadyExitsException(UserErrorCatalog.USERNAME_ALREADY_EXISTS, "User with username "+signUpRequest.getUsername()+" already exists.");
             if (Objects.equals(existingUser.get().getEmail(), signUpRequest.getEmail()))
-                throw new UserAlreadyExitsException(UserErrorCatalog.EMAIL_ALREADY_EXISTS);
+                throw new UserAlreadyExitsException(UserErrorCatalog.EMAIL_ALREADY_EXISTS, "User with email "+signUpRequest.getEmail()+" already exists." );
         }
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();

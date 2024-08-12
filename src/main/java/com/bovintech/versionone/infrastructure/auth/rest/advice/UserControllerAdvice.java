@@ -18,7 +18,7 @@ public class UserControllerAdvice {
     public ResponseEntity<ErrorResponse> handleAlreadyExitsUser(UserAlreadyExitsException userException, WebRequest webRequest){
         return new ResponseEntity<>(ErrorResponse.builder()
                 .code(userException.getCode())
-                .message(userException.getErrorMessage())
+                .message(userException.getMessage())
                 .details(Collections.singletonList(userException.getDetailsMessage()))
                 .path(webRequest.getDescription(false).replace("uri=",""))
                 .timestamp(LocalDateTime.now())

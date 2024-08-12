@@ -1,4 +1,4 @@
-package com.bovintech.versionone.domain.util;
+package com.bovintech.versionone.domain.util.exception;
 
 import java.util.HashMap;
 import java.util.Map;

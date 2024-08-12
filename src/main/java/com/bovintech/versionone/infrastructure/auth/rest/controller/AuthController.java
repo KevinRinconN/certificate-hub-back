@@ -24,17 +24,17 @@ public class AuthController {
     private final UserDetailsHandler userDetailsHandler;
 
     @PostMapping("/sign-up")
-    public ResponseEntity<ResponseHandler<UserRest>> create(@RequestBody @Valid SignUpRequest signUpRequest){
-        return ResponseHandler.format("User has been successfully created", HttpStatus.CREATED,userCreateHandler.execute(signUpRequest));
+    public ResponseHandler<UserRest> create(@RequestBody @Valid SignUpRequest signUpRequest){
+        return ResponseHandler.success("User has been successfully created",userCreateHandler.execute(signUpRequest), HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<ResponseHandler<AccessTokenRest>> login(@RequestBody LoginRequest loginDto) {
+    public ResponseHandler<AccessTokenRest> login(@RequestBody LoginRequest loginDto) {
         return ResponseHandler.success("Successful Authorization", userAuthenticateHandler.execute(loginDto));
     }
 
     @GetMapping("/me")
-    public ResponseEntity<ResponseHandler<UserRest>> getGreeting (@RequestHeader("Authorization") String token) {
+    public ResponseHandler<UserRest> getGreeting (@RequestHeader("Authorization") String token) {
         return ResponseHandler.success("User data successfully", userDetailsHandler.execute(token));
     }
 

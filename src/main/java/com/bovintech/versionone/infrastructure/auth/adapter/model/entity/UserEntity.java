@@ -16,9 +16,9 @@ public class UserEntity {
     @Id
     @Column(nullable = false, length = 20)
     private String username;
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 40)
     private String firstName;
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 40)
     private String lastName;
     @Column(nullable = false, length = 200)
     private String password;

@@ -1,4 +1,4 @@
-package com.bovintech.versionone.domain.util;
+package com.bovintech.versionone.domain.util.exception;
 
 public interface ErrorCode {
     String getCode();

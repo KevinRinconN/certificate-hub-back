@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: ${DATABASE_URL}
-    username: ${DATABASE_USERNAME}
-    password: ${DATABASE_PASSWORD}
+    url: jdbc:mysql://localhost:3306/certification_hub
+    username: root
+    password: Pfdk_09.26
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   config:
     activate:
       on-profile: dev

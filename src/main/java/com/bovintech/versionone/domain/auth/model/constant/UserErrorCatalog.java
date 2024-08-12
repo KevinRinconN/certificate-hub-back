@@ -1,6 +1,6 @@
 package com.bovintech.versionone.domain.auth.model.constant;
 
-import com.bovintech.versionone.domain.util.ErrorCode;
+import com.bovintech.versionone.domain.util.exception.ErrorCode;
 
 public enum UserErrorCatalog implements ErrorCode {
     USERNAME_ALREADY_EXISTS("UAE", "El nombre de usuario ya está registrado"),
