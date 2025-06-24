@@ -13,7 +13,7 @@ public interface ICertificationRepository {
     Optional<Long> findLastConsecutiveBySeasonId(Long seasonId);
     CertificationDTO save(CertificationDTO certificationDTO);
     List<CertificationDTO> saveAll(List<CertificationDTO> certificationDTO);
-    Page<CertificateDTO> findCertificates(CertificateSearchParams cattleSearchParams);
+    Page<CertificationDTO> findCertificates(CertificateSearchParams cattleSearchParams);
     void delete(Long id);
     Optional<CertificationDTO> getById(Long id);
 }

@@ -6,6 +6,7 @@ import com.bovintech.versionone.domain.company.service.CompanyCreateService;
 import com.bovintech.versionone.domain.company.service.CompanyFindByNitService;
 import com.bovintech.versionone.domain.company.service.CompanyGetByNameService;
 import com.bovintech.versionone.domain.company.service.CompanySearchService;
+import com.bovintech.versionone.domain.company.usecases.CompanyCreateUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,17 +18,18 @@ public class CompanyBean {
     }
 
     @Bean
-    public CompanyGetByNameService companyGetByIdService(ICompanyRepository iCompanyRepository){
+    public CompanyGetByNameService companyGetByNameService(ICompanyRepository iCompanyRepository){
         return new CompanyGetByNameService(iCompanyRepository);
     }
 
+
     @Bean
-    public CompanySearchService companySearchService (ICompanyRepository iCompanyRepository){
-        return new CompanySearchService(iCompanyRepository);
+    public CompanyCreateService companyCreateService(CompanyCreateUseCase companyCreateUseCase){
+        return  new CompanyCreateService(companyCreateUseCase);
     }
 
     @Bean
-    public CompanyCreateService companyCreateService(ICompanyRepository iCompanyRepository){
-        return  new CompanyCreateService(iCompanyRepository);
+    public CompanyCreateUseCase companyCreateUseCase(ICompanyRepository iCompanyRepository){
+        return  new CompanyCreateUseCase(iCompanyRepository);
     }
 }

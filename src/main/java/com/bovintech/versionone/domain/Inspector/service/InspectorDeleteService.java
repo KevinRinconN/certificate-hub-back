@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 public class InspectorDeleteService {
     private final InspectorDeleteUseCase inspectorDeleteUseCase;
 
-    public void execute (Long id){
+    public void execute (String id){
         inspectorDeleteUseCase.execute(id);
     }
 }

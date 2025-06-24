@@ -3,6 +3,7 @@ package com.bovintech.versionone.infrastructure.inspector.rest.controller;
 import com.bovintech.versionone.application.inspector.command.InspectorCreateHandler;
 import com.bovintech.versionone.application.inspector.command.InspectorDeleteHandler;
 import com.bovintech.versionone.application.inspector.command.InspectorUpdateHandler;
+import com.bovintech.versionone.application.inspector.query.InspectorGetByIdHandler;
 import com.bovintech.versionone.application.inspector.query.InspectorSearchHandler;
 import com.bovintech.versionone.domain.Inspector.model.dto.InspectorCreateDTO;
 import com.bovintech.versionone.domain.Inspector.model.dto.InspectorDTO;
@@ -26,13 +27,19 @@ public class InspectorController {
     private final InspectorCreateHandler inspectorCreateHandler;
     private final InspectorUpdateHandler inspectorUpdateHandler;
     private final InspectorDeleteHandler inspectorDeleteHandler;
+    private final InspectorGetByIdHandler inspectorGetByIdHandler;
 
     @GetMapping
-    public ResponseHandler<Page<InspectorDTO>> search(@RequestParam(required = false) String firstname,
+    public ResponseHandler<Page<InspectorShow>> search(@RequestParam(required = false) String firstname,
                                                       @RequestParam(required = false) String lastname,
                                                       @RequestParam(required = false) String occupation,
                                                       @PageableDefault(page = 0, size = 10) Pageable pageable) {
         return ResponseHandler.success("", inspectorSearchHandler.execute(new InspectorSearchParams(firstname, lastname, occupation), pageable));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseHandler<InspectorShow> getById(@PathVariable String id){
+        return ResponseHandler.success("Inspector data successfully", inspectorGetByIdHandler.execute(id));
     }
 
     @PostMapping
@@ -41,12 +48,12 @@ public class InspectorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseHandler<InspectorShow> update (@PathVariable Long id, @RequestBody @Valid InspectorUpdateDTO inspectorUpdateDTO){
+    public ResponseHandler<InspectorShow> update (@PathVariable String id, @RequestBody @Valid InspectorUpdateDTO inspectorUpdateDTO){
         return ResponseHandler.success("Inspector update successfully", inspectorUpdateHandler.execute(id, inspectorUpdateDTO));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseHandler<Void> execute (@PathVariable Long id){
+    public ResponseHandler<Void> execute (@PathVariable String id){
         inspectorDeleteHandler.execute(id);
         return ResponseHandler.success("Inspector with id: "+id+ " delete successfully");
     }

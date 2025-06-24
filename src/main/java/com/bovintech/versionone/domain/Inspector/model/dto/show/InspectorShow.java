@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class InspectorShow {
-    private Long id;
+    private String username;
     private String firstname;
     private String lastname;
     private String displayName;

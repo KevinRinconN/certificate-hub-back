@@ -8,9 +8,9 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface IinspectorRepository {
-    Optional<InspectorDTO> getById(Long id);
+    Optional<InspectorDTO> getById(String id);
     Page<InspectorDTO> search(InspectorSearchParams searchParams, Pageable pageable);
     InspectorDTO save(InspectorDTO inspector);
 
-    void delete(Long id);
+    void delete(String id);
 }

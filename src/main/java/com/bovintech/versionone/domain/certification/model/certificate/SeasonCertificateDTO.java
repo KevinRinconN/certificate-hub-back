@@ -12,5 +12,6 @@ import java.time.LocalDate;
 public class SeasonCertificateDTO{
     private Long id;
     private String name;
+    private String prefix;
     private LocalDate startDate;
 }

@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .csrf((csrf) -> csrf.disable())
                 .cors(cors -> cors.configurationSource(request -> {
                     CorsConfiguration corsConfiguration = new CorsConfiguration();
-                    corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+                    corsConfiguration.setAllowedOrigins(Arrays.asList("*"));
                     corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
                     corsConfiguration.setAllowedHeaders(Arrays.asList("*"));
 
@@ -46,6 +46,8 @@ public class SecurityConfig {
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authorize) -> {
                             authorize.requestMatchers("/auth/login").permitAll();
+                            authorize.requestMatchers("/certification/token/**").permitAll();
+                            authorize.requestMatchers("/certification/nit/**").permitAll();
                             authorize.anyRequest().authenticated();
                         }
                 )

@@ -6,6 +6,9 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
+import java.time.LocalDate;
+import java.util.List;
+
 public class SpecificationBuilder<T> {
     private Specification<T> specification;
     private static final ComparisonType DEFAULT_COMPARISON_TYPE = ComparisonType.EQUALS; // Valor por defecto
@@ -75,10 +78,21 @@ public class SpecificationBuilder<T> {
         return this;
     }
 
+    public SpecificationBuilder<T> withDateRange(String startDate, String endDate, String fieldName) {
+        if (startDate != null && !startDate.isEmpty()) {
+            if (endDate != null && !endDate.isEmpty()) {
+                this.specification = this.specification.and(attributeBetweenDates(startDate, endDate, fieldName));
+            } else {
+                this.specification = this.specification.and(attributeGreaterThanOrEqualTo(startDate, fieldName));
+            }
+        } else if (endDate != null && !endDate.isEmpty()) {
+            this.specification = this.specification.and(attributeLessThanOrEqualTo(endDate, fieldName));
+        }
+        return this;
+    }
+
     private Specification<T> attributeEquals(String attribute, String fieldName) {
-        return (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
-            return criteriaBuilder.equal(root.get(fieldName), attribute);
-        };
+        return (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> criteriaBuilder.equal(root.get(fieldName), attribute);
     }
 
     private Specification<T> attributeEqualsInRelatedEntity(String attribute, String relatedEntity, String fieldName) {
@@ -89,15 +103,35 @@ public class SpecificationBuilder<T> {
     }
 
     private Specification<T> attributeLike(String attribute, String fieldName) {
-        return (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
-            return criteriaBuilder.like(root.get(fieldName), "%" + attribute + "%");
-        };
+        return (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> criteriaBuilder.like(root.get(fieldName), "%" + attribute + "%");
     }
 
     private Specification<T> attributeLikeInRelatedEntity(String attribute, String relatedEntity, String fieldName) {
         return (Root<T> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) -> {
             Join<Object, Object> join = root.join(relatedEntity);
             return criteriaBuilder.like(join.get(fieldName), "%" + attribute + "%");
+        };
+    }
+
+    private Specification<T> attributeBetweenDates(String startDate, String endDate, String fieldName) {
+        return (root, query, criteriaBuilder) -> {
+            LocalDate start = LocalDate.parse(startDate);
+            LocalDate end = LocalDate.parse(endDate);
+            return criteriaBuilder.between(root.get(fieldName), start, end);
+        };
+    }
+
+    private Specification<T> attributeGreaterThanOrEqualTo(String startDate, String fieldName) {
+        return (root, query, criteriaBuilder) -> {
+            LocalDate start = LocalDate.parse(startDate);
+            return criteriaBuilder.greaterThanOrEqualTo(root.get(fieldName), start);
+        };
+    }
+
+    private Specification<T> attributeLessThanOrEqualTo(String endDate, String fieldName) {
+        return (root, query, criteriaBuilder) -> {
+            LocalDate end = LocalDate.parse(endDate);
+            return criteriaBuilder.lessThanOrEqualTo(root.get(fieldName), end);
         };
     }
 

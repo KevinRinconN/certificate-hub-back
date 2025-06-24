@@ -19,6 +19,7 @@ public class SeasonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String prefix;
     @Temporal(TemporalType.DATE)
     private LocalDate startDate;
 

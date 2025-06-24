@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class InspectorUpdateHandler {
     private final InspectorUpdateService inspectorUpdateService;
 
-    public InspectorShow execute (Long id, InspectorUpdateDTO inspectorUpdateDTO){
+    public InspectorShow execute (String id, InspectorUpdateDTO inspectorUpdateDTO){
         return inspectorUpdateService.execute(id, inspectorUpdateDTO);
     }
 }

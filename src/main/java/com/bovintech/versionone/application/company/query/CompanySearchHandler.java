@@ -1,6 +1,7 @@
 package com.bovintech.versionone.application.company.query;
 
 import com.bovintech.versionone.domain.company.model.CompanyDTO;
+import com.bovintech.versionone.domain.company.model.CompanyShowDTO;
 import com.bovintech.versionone.domain.company.model.quey.CompanySearchParams;
 import com.bovintech.versionone.domain.company.service.CompanySearchService;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class CompanySearchHandler {
     private final CompanySearchService companySearchService;
 
-    public Page<CompanyDTO> execute(CompanySearchParams companySearchParams){
+    public Page<CompanyShowDTO> execute(CompanySearchParams companySearchParams){
         return companySearchService.execute(companySearchParams);
     }
 }

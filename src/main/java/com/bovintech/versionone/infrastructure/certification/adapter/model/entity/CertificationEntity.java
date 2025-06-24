@@ -20,9 +20,13 @@ public class CertificationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long consecutive;
+    private Long clientConsecutive;
     private Integer validateBy;
-
-    @Temporal(TemporalType.DATE)
+    private String address;
+    private String nameCompany;
+    private String phone;
+    private String email;
+    private String ciu;
     private LocalDate date;
 
     @ManyToOne

@@ -13,7 +13,7 @@ public class InspectorUpdateUseCase {
     private final IinspectorRepository iinspectorRepository;
     private final InspectorGetByIdUseCase inspectorGetByIdUseCase;
 
-    public InspectorDTO execute (Long id, InspectorUpdateDTO updateDTO){
+    public InspectorDTO execute (String id, InspectorUpdateDTO updateDTO){
         InspectorDTO inspectorDTO = inspectorGetByIdUseCase.execute(id);
         InspectorMapper.INSTANCE.toUpdateFromDto(updateDTO,inspectorDTO);
         return iinspectorRepository.save(inspectorDTO);

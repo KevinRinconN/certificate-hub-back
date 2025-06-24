@@ -25,7 +25,7 @@ public class InspectorRepositoryImpl implements IinspectorRepository {
     private final IinspectorJpaRepository iinspectorJpaRepository;
     private final InspectorMapper inspectorMapper;
     @Override
-    public Optional<InspectorDTO> getById(Long id) {
+    public Optional<InspectorDTO> getById(String id) {
         var optionalInspector = iinspectorJpaRepository.findById(id);
         return optionalInspector.map(inspectorMapper::toDomain);
     }
@@ -50,7 +50,7 @@ public class InspectorRepositoryImpl implements IinspectorRepository {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(String id) {
         iinspectorJpaRepository.deleteById(id);
     }
 }

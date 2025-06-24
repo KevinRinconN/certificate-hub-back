@@ -8,7 +8,7 @@ import lombok.Getter;
 public class CompanyBadRequest extends GlobalExeception {
     private final String message;
     public CompanyBadRequest(ErrorCode error, String message) {
-        super(error.getCode(), message);
+        super(message, error.getCode());
         this.message = error.getMessage();
     }
 }

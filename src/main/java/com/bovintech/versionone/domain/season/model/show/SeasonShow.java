@@ -8,5 +8,6 @@ import java.time.LocalDate;
 public class SeasonShow {
     private Long id;
     private String name;
+    private String prefix;
     private LocalDate startDate;
 }

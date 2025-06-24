@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class InspectorDeleteHandler {
     private final InspectorDeleteService inspectorDeleteService;
 
-    public void execute (Long id){
+    public void execute (String id){
         inspectorDeleteService.execute(id);
     }
 }

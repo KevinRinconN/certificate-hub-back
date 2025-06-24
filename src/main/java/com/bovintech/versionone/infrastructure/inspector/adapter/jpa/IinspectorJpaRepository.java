@@ -4,6 +4,8 @@ import com.bovintech.versionone.infrastructure.inspector.adapter.model.entity.In
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface IinspectorJpaRepository extends JpaRepository<InspectorEntity, Long>, JpaSpecificationExecutor<InspectorEntity> {
+import java.util.Optional;
+
+public interface IinspectorJpaRepository extends JpaRepository<InspectorEntity, String>, JpaSpecificationExecutor<InspectorEntity> {
 
 }

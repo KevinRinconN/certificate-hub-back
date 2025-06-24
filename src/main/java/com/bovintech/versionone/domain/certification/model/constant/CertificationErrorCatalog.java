@@ -5,7 +5,9 @@ import lombok.Getter;
 
 @Getter
 public enum CertificationErrorCatalog implements ErrorCode {
-    CERTIFICATION_NOT_FOUND("CNFI", "El certificado no fue encontrado");
+    CERTIFICATION_NOT_FOUND("CNFI", "El certificado no fue encontrado"),
+    CERTIFICATION_QR_INVALID("CQRI", "Qr invalido");
+
     private final String code;
     private final String message;
 

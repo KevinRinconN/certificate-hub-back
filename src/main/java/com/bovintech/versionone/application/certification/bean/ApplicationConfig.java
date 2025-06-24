@@ -1,18 +1,12 @@
 package com.bovintech.versionone.application.certification.bean;
 
-import com.bovintech.versionone.domain.Inspector.service.InspectorFindByIdService;
 import com.bovintech.versionone.domain.Inspector.usecases.InspectorGetByIdUseCase;
 import com.bovintech.versionone.domain.certification.port.repository.ICertificationRepository;
-import com.bovintech.versionone.domain.certification.service.CertificationCreateService;
-import com.bovintech.versionone.domain.certification.service.CertificationDeleteService;
-import com.bovintech.versionone.domain.certification.service.CertificationGetByIdService;
-import com.bovintech.versionone.domain.certification.service.CertificationUpdateService;
-import com.bovintech.versionone.domain.certification.usecases.CertificationDeleteUseCase;
-import com.bovintech.versionone.domain.certification.usecases.CertificationGetByIdUseCase;
-import com.bovintech.versionone.domain.certification.usecases.CertificationUpdateUseCase;
-import com.bovintech.versionone.domain.company.service.CompanyCreateService;
-import com.bovintech.versionone.domain.company.service.CompanyGetByNameService;
-import com.bovintech.versionone.domain.season.service.SeasonGetByIdService;
+import com.bovintech.versionone.domain.certification.service.*;
+import com.bovintech.versionone.domain.certification.usecases.*;
+import com.bovintech.versionone.domain.company.service.CompanyFindByNitService;
+import com.bovintech.versionone.domain.company.usecases.CompanyCreateUseCase;
+import com.bovintech.versionone.domain.departament.usecases.DepartamentGetUseCase;
 import com.bovintech.versionone.domain.season.usecases.SeasonGetByIdUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +19,8 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public CertificationGetByIdService certificationGetByIdService(CertificationGetByIdUseCase getByIdUseCase) {
-        return new CertificationGetByIdService(getByIdUseCase);
+    public CertificationGetByIdService certificationGetByIdService(CertificationGetByIdUseCase getByIdUseCase, QrTokenGenerateUseCase qrTokenGenerateUseCase, DepartamentGetUseCase departamentGetUseCase) {
+        return new CertificationGetByIdService(getByIdUseCase, qrTokenGenerateUseCase, departamentGetUseCase);
     }
 
     @Bean
@@ -54,10 +48,47 @@ public class ApplicationConfig {
 
     @Bean
     public CertificationCreateService certificationCreateService(ICertificationRepository iCertificationRepository,
-                                                                 CompanyCreateService companyCreateService,
-                                                                 CompanyGetByNameService companyGetByNameService,
+                                                                 CompanyCreateUseCase companyCreateUseCase,
+                                                                 CompanyFindByNitService companyFindByNitService,
                                                                  SeasonGetByIdUseCase seasonGetByIdUseCase,
                                                                  InspectorGetByIdUseCase inspectorGetByIdUseCase){
-        return new CertificationCreateService(iCertificationRepository,companyCreateService, companyGetByNameService,seasonGetByIdUseCase, inspectorGetByIdUseCase);
+        return new CertificationCreateService(iCertificationRepository,companyCreateUseCase, companyFindByNitService,seasonGetByIdUseCase, inspectorGetByIdUseCase);
+    }
+
+    @Bean
+    public QrTokenGenerateUseCase qrTokenGenerateUseCase (){
+        return new QrTokenGenerateUseCase();
+    }
+
+    @Bean
+    public CertificationGetByTokenService certificationGetByTokenService (CertificationGetByTokenUseCase certificationGetByTokenUseCase){
+        return new CertificationGetByTokenService(certificationGetByTokenUseCase);
+    }
+
+    @Bean
+    public CertificationGetByTokenUseCase certificationGetByTokenUseCase(QrTokenDetailsUseCase qrTokenDetailsUseCase,
+                                                                         QrTokenValidateUseCase qrTokenValidateUseCase,
+                                                                         CertificationGetByIdUseCase certificationGetByIdUseCase){
+        return new CertificationGetByTokenUseCase(qrTokenValidateUseCase, qrTokenDetailsUseCase, certificationGetByIdUseCase);
+    }
+
+    @Bean
+    public QrTokenValidateUseCase qrTokenValidateUseCase(){
+        return new QrTokenValidateUseCase();
+    }
+
+    @Bean
+    public QrTokenDetailsUseCase qrTokenDetailsUseCase(){
+        return new QrTokenDetailsUseCase();
+    }
+
+    @Bean
+    public CertificationGetByNitCompanyUseCase certificationGetByNitCompanyUseCase (CompanyFindByNitService companyFindByNitService){
+        return new CertificationGetByNitCompanyUseCase(companyFindByNitService);
+    }
+
+    @Bean
+    public CertificationByNitCompanyService certificationByNitCompanyService (CertificationGetByNitCompanyUseCase companyUseCase, QrTokenGenerateUseCase qrTokenGenerateUseCase){
+        return new CertificationByNitCompanyService(companyUseCase, qrTokenGenerateUseCase);
     }
 }

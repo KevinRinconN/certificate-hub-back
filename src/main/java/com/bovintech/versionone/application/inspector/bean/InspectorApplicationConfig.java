@@ -3,6 +3,7 @@ package com.bovintech.versionone.application.inspector.bean;
 import com.bovintech.versionone.domain.Inspector.port.repository.IinspectorRepository;
 import com.bovintech.versionone.domain.Inspector.service.InspectorDeleteService;
 import com.bovintech.versionone.domain.Inspector.service.InspectorFindByIdService;
+import com.bovintech.versionone.domain.Inspector.service.InspectorGetByIdService;
 import com.bovintech.versionone.domain.Inspector.service.InspectorUpdateService;
 import com.bovintech.versionone.domain.Inspector.usecases.InspectorDeleteUseCase;
 import com.bovintech.versionone.domain.Inspector.usecases.InspectorGetByIdUseCase;
@@ -16,11 +17,6 @@ public class InspectorApplicationConfig {
     @Bean
     public InspectorFindByIdService inspectorFindByIdService (InspectorGetByIdUseCase inspectorGetByIdUseCase){
         return new InspectorFindByIdService(inspectorGetByIdUseCase);
-    }
-
-    @Bean
-    public InspectorGetByIdUseCase inspectorGetByIdUseCase (IinspectorRepository iinspectorRepository){
-        return new InspectorGetByIdUseCase(iinspectorRepository);
     }
 
     @Bean
@@ -41,5 +37,15 @@ public class InspectorApplicationConfig {
     @Bean
     public InspectorDeleteUseCase inspectorDeleteUseCase(IinspectorRepository iinspectorRepository, InspectorGetByIdUseCase inspectorGetByIdUseCase){
         return new InspectorDeleteUseCase(iinspectorRepository, inspectorGetByIdUseCase);
+    }
+
+    @Bean
+    public InspectorGetByIdService inspectorGetByIdService (InspectorGetByIdUseCase inspectorGetByIdUseCase){
+        return new InspectorGetByIdService(inspectorGetByIdUseCase);
+    }
+
+    @Bean
+    public InspectorGetByIdUseCase inspectorGetByIdUseCase (IinspectorRepository iinspectorRepository){
+        return new InspectorGetByIdUseCase(iinspectorRepository);
     }
 }

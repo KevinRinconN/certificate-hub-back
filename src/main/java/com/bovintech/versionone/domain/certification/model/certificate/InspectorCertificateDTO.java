@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class InspectorCertificateDTO{
+    private String username;
     private String displayName;
     private String occupation;
     private String signature;

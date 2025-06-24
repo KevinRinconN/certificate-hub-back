@@ -8,8 +8,9 @@ import lombok.Setter;
 @Setter
 @Builder
 public class CompanyCertificateDTO{
+    private Long id;
     private String name;
     private String nit;
-    private String address;
-    private String ciu;
+    private String phone;
+    private String email;
 }

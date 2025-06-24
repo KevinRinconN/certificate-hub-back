@@ -21,14 +21,10 @@ public class CompanyEntity {
     private String name;
     @Column(nullable = false, length = 50)
     private String nit;
-    @Column(nullable = false, length = 100)
-    private String address;
-    @Column(nullable = false, length = 200)
+    @Column(length = 200)
     private String email;
-    @Column(nullable = false, length = 20)
+    @Column(length = 20)
     private String phone;
-    @Column(nullable = false, length = 50)
-    private String ciu;
 
     @OneToMany(mappedBy = "company")
     private List<CertificationEntity> certifications;

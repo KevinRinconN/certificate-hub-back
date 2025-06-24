@@ -16,8 +16,4 @@ public class CertificationCreateHandler {
     public List<CertificationDTO> execute (List<CreateCertificationDTO> createCertificationDTO){
         return certificationCreateService.execute(createCertificationDTO);
     }
-
-    public CertificationDTO execute (CreateCertificationDTO certificationDTO){
-        return certificationCreateService.execute(certificationDTO);
-    }
 }

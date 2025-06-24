@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 public class InspectorGetByIdUseCase {
     private final IinspectorRepository iinspectorRepository;
 
-    public InspectorDTO execute(Long id){
+    public InspectorDTO execute(String id){
         return iinspectorRepository.getById(id).orElseThrow(()-> new NotFoundException(InspectorErrorCatalog.INSPECTOR_BY_ID_NOT_FOUND,"El inspector con el id "+id+" no fue encontrado"));
     }
 }

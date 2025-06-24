@@ -14,7 +14,7 @@ public class InspectorFindByIdService {
 
     private final InspectorGetByIdUseCase inspectorGetByIdUseCase;
 
-    public InspectorShow execute (Long id) {
+    public InspectorShow execute (String id) {
         return InspectorMapper.INSTANCE.toShow(inspectorGetByIdUseCase.execute(id));
     }
 }

@@ -9,8 +9,8 @@ public class InspectorDeleteUseCase {
     private final IinspectorRepository iinspectorRepository;
     private final InspectorGetByIdUseCase inspectorGetByIdUseCase;
 
-    public void execute (Long id){
-        inspectorGetByIdUseCase.execute(id);
-        iinspectorRepository.delete(id);
+    public void execute (String id){
+        InspectorDTO inspectorDTO = inspectorGetByIdUseCase.execute(id);
+        iinspectorRepository.delete(inspectorDTO.getUsername());
     }
 }

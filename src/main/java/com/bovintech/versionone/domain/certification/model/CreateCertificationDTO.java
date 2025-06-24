@@ -15,10 +15,13 @@ public class CreateCertificationDTO {
     @NotEmpty(message = "NIT requerido")
     private String nit;
 
-    @NotEmpty(message = "Nombre requerido")
     private String name;
 
-    @NotEmpty(message = "CIU requerido")
+    @NotNull(message = "Consecutivo de cliente requerido")
+    @Min(value = 1, message = "El valor de clientConsecutive debe ser mayor que 0")
+    private Long clientConsecutive;
+
+    @NotEmpty(message = "CIIU requerido")
     private String ciu;
 
     @NotNull(message = "Fecha requerida")
@@ -29,11 +32,9 @@ public class CreateCertificationDTO {
     @Min(value = 1, message = "El valor de validateBy debe ser mayor que 0")
     private Integer validateBy;
 
-    @NotEmpty(message = "Correo electrónico requerido")
     @Email(message = "Correo electrónico no es válido")
     private String email;
 
-    @NotEmpty(message = "Teléfono requerido")
     private String phone;
 
     @NotEmpty(message = "Dirección requerida")
@@ -42,6 +43,12 @@ public class CreateCertificationDTO {
     @NotEmpty(message = "ID de temporada requerido")
     private String seasonId;
 
-    @NotNull(message = "ID de inspector requerido")
-    private Long inspectorId;
+    @NotEmpty(message = "ID de inspector requerido")
+    private String inspectorId;
+
+
+    public void setEmail(String email) {
+        this.email = email != null ? email.trim() : null;
+    }
+
 }

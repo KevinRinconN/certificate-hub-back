@@ -14,6 +14,7 @@ import java.util.List;
 public class SeasonDTO {
     private Long id;
     private String name;
+    private String prefix;
     private LocalDate startDate;
     private List<CertificationDTO> certifications;
 }

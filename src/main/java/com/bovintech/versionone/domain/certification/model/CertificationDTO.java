@@ -16,9 +16,31 @@ import java.time.LocalDate;
 public class CertificationDTO {
     private Long id;
     private Long consecutive;
+    private Long clientConsecutive;
+    private String address;
+    private String nameCompany;
+    private String phone;
+    private String email;
+    private String ciu;
     private Integer validateBy;
     private LocalDate date;
     private InspectorDTO inspector;
     private SeasonDTO season;
     private CompanyDTO company;
+
+    public boolean isActive() {
+        // Verifica si la fecha actual está dentro del periodo de validez
+        if (date != null && validateBy != null) {
+            LocalDate expiryDate = date.plusYears(validateBy); // Calcula la fecha de expiración
+            return LocalDate.now().isBefore(expiryDate) || LocalDate.now().isEqual(expiryDate);
+        }
+        return false; // Si no se puede determinar la vigencia, se asume que no está vigente
+    }
+
+    public String getFormatConsecutive () {
+        String prefix = this.season.getPrefix();
+        return String.format("pr-%d-%s",
+                this.clientConsecutive,
+                prefix != null ? prefix : "unknown");
+    }
 }

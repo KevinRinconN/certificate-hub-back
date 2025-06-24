@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 public class InspectorUpdateService {
     private final InspectorUpdateUseCase inspectorUpdateUseCase;
 
-    public InspectorShow execute(Long id, InspectorUpdateDTO inspectorUpdateDTO){
+    public InspectorShow execute(String id, InspectorUpdateDTO inspectorUpdateDTO){
         return InspectorMapper.INSTANCE.toShow(inspectorUpdateUseCase.execute(id, inspectorUpdateDTO));
     }
 }

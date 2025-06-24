@@ -7,6 +7,7 @@ import com.bovintech.versionone.domain.certification.port.repository.ICertificat
 import com.bovintech.versionone.infrastructure.certification.adapter.jpa.ICertificationJpaRepository;
 import com.bovintech.versionone.infrastructure.certification.adapter.mapper.CertificationMapper;
 import com.bovintech.versionone.infrastructure.certification.adapter.model.entity.CertificationEntity;
+import com.bovintech.versionone.infrastructure.certification.adapter.specification.CertificationSpecification;
 import com.bovintech.versionone.infrastructure.inspector.adapter.model.entity.InspectorEntity;
 import com.bovintech.versionone.infrastructure.util.ComparisonType;
 import com.bovintech.versionone.infrastructure.util.SpecificationBuilder;
@@ -51,16 +52,18 @@ public class CertificationRepositoryImpl implements ICertificationRepository {
     }
 
     @Override
-    public Page<CertificateDTO> findCertificates(CertificateSearchParams params) {
+    public Page<CertificationDTO> findCertificates(CertificateSearchParams params) {
         Specification<CertificationEntity> specification = new SpecificationBuilder<CertificationEntity>()
-                .withRelated(params.getNameCompany(), "company", "name", ComparisonType.LIKE)
-                .build();
+                .withDateRange(params.getStartDate(), params.getEndDate(), "date")
+                .with(params.getNameCompany(), "nameCompany", ComparisonType.LIKE)
+                .withRelated(params.getNit(), "company", "nit", ComparisonType.LIKE)
+                .build()
+                .and(CertificationSpecification.hasInspectors(params.getInspectors()));
 
         Pageable pageable = PageRequest.of(params.getPage(), params.getSize(), SortUtils.createSort(params.getSort()));
 
         Page<CertificationEntity> entityPage = iCertificationJpaRepository.findAll(specification,pageable);
-        Page<CertificationDTO> certificationDTO = entityPage.map(certificationMapper::toDomain);
-        return certificationDTO.map(certificationMapper::toCertificate);
+        return entityPage.map(certificationMapper::toDomain);
     }
 
     @Override

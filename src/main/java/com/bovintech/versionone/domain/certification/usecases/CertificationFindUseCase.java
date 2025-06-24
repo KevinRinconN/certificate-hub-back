@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 
 @RequiredArgsConstructor
-public class CertificationFindService {
+public class CertificationFindUseCase {
     private final ICertificationRepository iCertificationRepository;
 
     public Page<CertificationDTO> execute (CertificateSearchParams searchParams) {
