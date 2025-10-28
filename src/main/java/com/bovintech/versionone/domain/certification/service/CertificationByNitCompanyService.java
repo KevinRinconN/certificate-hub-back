@@ -6,6 +6,8 @@ import com.bovintech.versionone.domain.certification.model.certificate.Certifica
 import com.bovintech.versionone.domain.certification.usecases.CertificationGetByNitCompanyUseCase;
 import com.bovintech.versionone.domain.certification.usecases.QrTokenGenerateUseCase;
 import com.bovintech.versionone.domain.company.service.CompanyFindByNitService;
+import com.bovintech.versionone.domain.departament.model.dto.DepartamentDTO;
+import com.bovintech.versionone.domain.departament.usecases.DepartamentGetUseCase;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class CertificationByNitCompanyService {
     private final CertificationGetByNitCompanyUseCase certificationGetByNitCompanyUseCase;
     private final QrTokenGenerateUseCase qrTokenGenerateUseCase;
+    private final DepartamentGetUseCase departamentGetUseCase;
 
     public List<CertificateDTO> execute (String nit) {
         List<CertificationDTO> dtoList = certificationGetByNitCompanyUseCase.execute(nit);
@@ -27,11 +30,12 @@ public class CertificationByNitCompanyService {
                         cert -> cert, // Usar el certificado como valor
                         (existing, replacement) -> existing.getDate().isAfter(replacement.getDate()) ? existing : replacement // Seleccionar el más reciente
                 ));
-
+        DepartamentDTO department = departamentGetUseCase.execute();
         return filteredMap.values().stream()
                 .map(certification -> {
                     CertificateDTO certificate = CertificationMapper.INSTANCE.toShow(certification);
                     certificate.setQrToken(qrTokenGenerateUseCase.execute(String.valueOf(certificate.getId())));
+                    certificate.setDepartment(department);
                     return certificate;
                 })
                 .toList();

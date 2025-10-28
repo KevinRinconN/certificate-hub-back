@@ -32,6 +32,6 @@ public class SignUpRequest {
     @NotEmpty(message = "password requerida")
     private String password;
     @NotEmpty(message = "rol requerido")
-    @Pattern(regexp = "ADMIN|OPERATOR", message = "Rol inválido")
+    @Pattern(regexp = "ADMIN|OPERATOR|INSPECTOR|SECRETARIAT", message = "Rol inválido")
     private String rol;
 }

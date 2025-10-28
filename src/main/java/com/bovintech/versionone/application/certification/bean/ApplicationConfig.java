@@ -88,7 +88,7 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public CertificationByNitCompanyService certificationByNitCompanyService (CertificationGetByNitCompanyUseCase companyUseCase, QrTokenGenerateUseCase qrTokenGenerateUseCase){
-        return new CertificationByNitCompanyService(companyUseCase, qrTokenGenerateUseCase);
+    public CertificationByNitCompanyService certificationByNitCompanyService (CertificationGetByNitCompanyUseCase companyUseCase, QrTokenGenerateUseCase qrTokenGenerateUseCase, DepartamentGetUseCase departamentGetUseCase){
+        return new CertificationByNitCompanyService(companyUseCase, qrTokenGenerateUseCase, departamentGetUseCase);
     }
 }

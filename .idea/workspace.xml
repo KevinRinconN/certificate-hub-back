@@ -4,128 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07358a09-206a-4353-a913-b691ee778181" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/bean/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/command/CertificationCreateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/command/CertificationDeleteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/command/CertificationUpdateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/query/CertificationFindHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/query/CertificationGetByIdHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/company/query/CompanySearchHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/inspector/bean/InspectorApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/inspector/command/InspectorCreateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/inspector/command/InspectorDeleteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/inspector/command/InspectorUpdateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/inspector/query/InspectorSearchHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/season/bean/SeasonApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/exception/InspectorErrorCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/mapper/InspectorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/model/dto/InspectorCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/model/dto/InspectorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/model/dto/InspectorUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/model/dto/query/InspectorSearchParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/model/dto/show/InspectorShow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/port/repository/IinspectorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/service/InspectorCreateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/service/InspectorDeleteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/service/InspectorFindByIdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/service/InspectorSearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/service/InspectorUpdateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/usecases/InspectorCreateUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/usecases/InspectorDeleteUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/usecases/InspectorGetByIdUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/Inspector/usecases/InspectorUpdateUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/mapper/CertificationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/CertificationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/CertificationUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/CreateCertificationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/certificate/CertificateSearchParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/certificate/CompanyCertificateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/certificate/InspectorCertificateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/certificate/SeasonCertificateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/constant/CertificationErrorCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/exception/CertificationNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/port/repository/ICertificationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationCreateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationDeleteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationFindService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationGetByIdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationUpdateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/usecases/CertificationDeleteUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/usecases/CertificationGetByIdUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/usecases/CertificationUpdateUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/usecases/CreateCertificationUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/model/CompanyDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/model/constant/CompanyErrorCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/model/exception/CompanyBadRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/model/exception/CompanyNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/model/quey/CompanySearchParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/port/repository/ICompanyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/service/CompanyCreateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/service/CompanyFindByNitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/service/CompanyGetByNameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/service/CompanySearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/departament/model/dto/DepartamentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/departament/service/DepartamentGetByIdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/mapper/SeasonMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/model/SeasonDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/model/exception/SeasonErrorCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/model/show/SeasonShow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/port/repository/ISeasonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/service/SeasonGetByIdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/season/usecases/SeasonGetByIdUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/dto/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/dto/PaginationParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/mapper/PartialUpdateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/validation/AtLeastOneField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/validation/AtLeastOneFieldValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/beanconfiguration/CertificationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/beanconfiguration/CompanyBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/beanconfiguration/InspectorBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/beanconfiguration/SeasonBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/certification/adapter/jpa/ICertificationJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/certification/adapter/jpa/repository/CertificationRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/certification/adapter/mapper/CertificationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/certification/adapter/model/entity/CertificationEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/certification/rest/advice/CertificationControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/certification/rest/controller/CertificationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/company/adapter/jpa/ICompanyJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/company/adapter/jpa/repository/CompanyRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/company/adapter/mapper/CompanyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/company/adapter/model/entity/CompanyEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/company/rest/controller/CompanyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/inspector/adapter/jpa/IinspectorJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/inspector/adapter/jpa/repository/InspectorRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/inspector/adapter/mapper/InspectorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/inspector/adapter/model/entity/InspectorEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/inspector/rest/controller/InspectorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/season/adapter/jpa/ISeasonJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/season/adapter/jpa/repository/SeasonRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/season/adapter/mapper/SeasonMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/season/adapter/model/entity/SeasonEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/ComparisonType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/ResponseFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/SpecificationBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/ValidationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/exceptions/InvalidSortException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/pagination/SortUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/specification/GlobalSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
+    <list default="true" id="07358a09-206a-4353-a913-b691ee778181" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/user/command/UserDeleteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/user/command/UserUpdateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/user/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/user/query/UserSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/user/model/GetUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/user/model/UpdateUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/user/model/UserSearchParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/rest/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/version-one.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/constant/UserErrorCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/constant/UserErrorCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/exception/UserAlreadyExitsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/exception/UserAlreadyExitsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/service/UserCreateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/service/UserCreateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/exception/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/ExceptionControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/exception/ExceptionControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/GlobalExeception.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/util/exception/GlobalExeception.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/adapter/model/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/adapter/model/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/rest/advice/UserControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/rest/advice/UserControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/rest/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/rest/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/GlobalControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/GlobalControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/ResponseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/util/ResponseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/bean/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/application/certification/bean/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/constant/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/constant/Rol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/dto/request/SignUpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/model/dto/request/SignUpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/port/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/port/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationByNitCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/service/CertificationByNitCompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/adapter/jpa/UserJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/adapter/jpa/UserJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/adapter/jpa/repository/UserRepositoryImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bovintech/versionone/infrastructure/auth/adapter/jpa/repository/UserRepositoryImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +43,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="version-one" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="version-one" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="version-one" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -156,8 +70,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -173,6 +87,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -183,13 +100,19 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.VersionOneApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build certificate-hub-back.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.certificate-hub-back [:com.bovintech.versionone.VersionOneApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.certificate-hub-back [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.version-one [dependencies].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kevin/Downloads/University/9_semestre/proyect/bovintech/backend/Bovintech&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kevin/Documents/work/proyects/BOMBEROS/prevencion-seguridad/certificate-hub/certificate-hub-back&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -219,6 +142,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="certificate-hub-back [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="version-one [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -243,6 +189,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.certificate-hub-back [clean build]" />
         <item itemvalue="Gradle.version-one [dependencies]" />
         <item itemvalue="Application.VersionOneApplication" />
       </list>
@@ -257,6 +204,23 @@
       <option name="presentableId" value="Default" />
       <updated>1714862413110</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <option name="closed" value="true" />
+      <created>1723482643811</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723482643811</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1723482662066</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723482662066</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,5 +233,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="NONE" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/company/model/CompanyWithCertificatesShowDTO.java</url>
+          <line>7</line>
+          <log-expression expression="ublic class CompanyWithCertificatesShowDTO extends CompanyShowDTO{&#10;    private List&lt;CompanyCertificateDTO&gt; certificates;&#10;}&#10;" language="JAVA" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/auth/service/JwtGenerateService.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bovintech/versionone/domain/certification/model/CertificationDTO.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
