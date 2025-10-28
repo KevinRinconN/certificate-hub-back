@@ -26,7 +26,23 @@ public class CompanyRepositoryImpl implements ICompanyRepository {
     private final CompanyMapper companyMapper;
     @Override
     public Optional<CompanyDTO> findByNit(String nit) {
-        return iCompanyJpaRepository.findByNit(nit).map(companyMapper::toDomain);
+        if (nit == null) {
+            return Optional.empty();
+        }
+
+        // Normaliza el NIT: elimina espacios, guiones, puntos, etc.
+        String normalizedNit = nit.replaceAll("[\\s.-]", "").trim();
+
+        // Busca en la base de datos con el NIT normalizado
+        return iCompanyJpaRepository.findAll().stream()
+                .filter(company -> {
+                    String companyNit = company.getNit();
+                    if (companyNit == null) return false;
+                    String normalizedCompanyNit = companyNit.replaceAll("[\\s.-]", "").trim();
+                    return normalizedCompanyNit.equalsIgnoreCase(normalizedNit);
+                })
+                .findFirst()
+                .map(companyMapper::toDomain);
     }
 
     @Override
