@@ -17,7 +17,7 @@ public class CompanyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = false)
     private String name;
     @Column(nullable = false, length = 50)
     private String nit;

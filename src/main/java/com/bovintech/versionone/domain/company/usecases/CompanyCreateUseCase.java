@@ -18,12 +18,13 @@ public class CompanyCreateUseCase {
         if (existingCompany.isPresent()) {
             throw new CompanyBadRequest(CompanyErrorCatalog.COMPANY_BAD_REQUEST,"Empresa con el NIT " + companyDTO.getNit() + " ya existe.");
         }
-
+        /**
         Optional<CompanyDTO> existingNameCompany = iCompanyRepository.findByName(companyDTO.getName());
         if (existingNameCompany.isPresent()) {
+            System.out.println(existingNameCompany);
             throw new CompanyBadRequest(CompanyErrorCatalog.COMPANY_BAD_REQUEST,"Empresa con la razon social " + companyDTO.getName() + " ya existe.");
         }
-
+        */
         return iCompanyRepository.save(companyDTO);
     }
 }
